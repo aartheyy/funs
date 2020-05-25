@@ -4,19 +4,22 @@ pipeline {
     stages {
         stage ('Compile Stage') {
             steps {
-                    sh 'mvn clean compile'
+                cd Java_WebApp-master/Java_WebApp-master/java-webapp
+                sh 'mvn clean compile'
             }    
          }
                           
          stage ('Testing Stage') {
            steps {
-                 sh 'mvn test'
+               cd Java_WebApp-master/Java_WebApp-master/java-webapp
+               sh 'mvn test'
             }
          } 
        
        stage ('Deployment Stage') {
          steps {
-                sh 'mvn package'
+             cd Java_WebApp-master/Java_WebApp-master/java-webapp
+             sh 'mvn package'
          }
        }
     }    
